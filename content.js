@@ -16,7 +16,8 @@ chrome.runtime.onMessage.addListener(
             }
 
             if(host == 'vod.tvp.pl') {
-                document.getElementById('JS-TVPlayer').contentWindow.document.getElementById('tvplayer').contentWindow.document.getElementsByTagName('video')[0].currentTime = skipTime;
+                // document.getElementById('JS-TVPlayer').contentWindow.document.getElementById('tvplayer').contentWindow.document.getElementsByTagName('video')[0].currentTime = skipTime;
+                $('.playerContainer').find('video').each(function(i){ if(!$(this).hasClass('tp2-layer')) { console.log($(this)[0].currentTime = 60); } });
                 console.log('Skipped! ;-)');
             }
 
